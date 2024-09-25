@@ -1,63 +1,128 @@
-const navDialog = document.getElementById('nav-dialog');
-function handleMenu() {
-    navDialog.classList.toggle('hidden');
-}
+const navMenu = document.getElementById("nav-menu")
+const navLink = document.querySelectorAll(".nav-link")
+const hamburger = document.getElementById("hamburger")
 
-const initialTranslatLTR = -48*4;
-const initialTranslatRTL = 36*4;
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("left-[0]")
+    hamburger.classList.toggle('ri-close-large-line')
+})
 
-
-function setupIntersectionObserver(element, isLTR, speed){
-    const intersectionCallback =(enteries) => {
-      const isIntersecting = enteries[0].isIntersecting;
-      if(isIntersecting) {
-        document.addEventListener('scroll', scrollHandler);
-      } else {
-        document.removeEventListener('scroll', scrollHandler);
-
-      }
-    }
-    const intersectionObserver = new IntersectionObserver(intersectionCallback);
-
-    intersectionObserver.observe(element);
-
-    function scrollHandler() {
-        const translateX = (window.innerHeight - element.getBoundingClientRect().top) * speed;
-
-        let totalTranslate = 0;
-        if(isLTR){
-         totalTranslate = translateX + initialTranslatLTR;
-        } else{
-         totalTranslate = -(translateX + initialTranslatRTL);
-          
-        }
-
-        element.style.transform = `translateX(${totalTranslate}px)`;
-    }
-}
-
-const line1 = document.getElementById('line1');
-const line2 = document.getElementById('line2');
-const line3 = document.getElementById('line3');
-const line4 = document.getElementById('line4');
-
-
-
-setupIntersectionObserver(line1, true, 0.15);
-setupIntersectionObserver(line2, false, 0.15);
-setupIntersectionObserver(line3, true, 0.15);
-
-setupIntersectionObserver(line4, true, 0.8);
-
-
-const dtElements = document.querySelectorAll('dt');
-dtElements.forEach(element => {
-    element.addEventListener('click', () =>{
-        const ddId = element.getAttribute('aria-controls');
-        const ddElement = document.getElementById(ddId);
-        const ddArrowIcon = element.querySelectorAll('i')[0];
-
-        ddElement.classList.toggle('hidden');
-        ddArrowIcon.classList.toggle('-rotate-180');
+navLink.forEach(link => {
+    link.addEventListener("click", () =>{
+        navMenu.classList.toggle("left-[0]")
+        hamburger.classList.toggle('ri-close-large-line')   
     })
 })
+
+// swiper 
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+   speed: 400,
+   spaceBetween: 30,
+   autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+   },
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    grabCursor: true,
+    breakpoints: {
+        640:{
+            slidesPerView: 1
+        },
+        768:{
+            slidesPerView: 2
+        },
+        1024:{
+            slidesPerView: 3
+        },
+    }
+  
+  });
+
+
+//   show scroll up nutton 
+
+const scrollUp = () => {
+    const scrollUpBtn = document.getElementById("scroll-up")
+
+    if(this.scrollY >=250) {
+        scrollUpBtn.classList.remove("-bottom-1/2")
+        scrollUpBtn.classList.add("bottom-4")
+    } else {
+        scrollUpBtn.classList.add("-bottom-1/2")
+        scrollUpBtn.classList.remove("bottom-4")
+        
+    }
+}
+
+window.addEventListener("scroll", scrollUp)
+
+// chnage background header 
+const scrollHeader = () => {
+    const header = document.getElementById("navbar")
+
+    if(this.scrollY >=50) {
+        header.classList.add("border-b", "border-yellow-500")
+    } else {
+        header.classList.remove("border-b", "border-yellow-500")
+        
+    }
+}
+
+window.addEventListener("scroll", scrollHeader)
+
+// scroll section active link 
+const activeLink = () => {
+    const sections = document.querySelectorAll('section')
+    const navlink = document.querySelectorAll(".nav-link")
+
+    let current = "home"
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if(this.scrollY >= sectionTop - 60) {
+            current = section.getAttribute("id")
+        }
+    })
+    navLink.forEach(item => {
+        item.classList.remove("active")
+        if(item.href.includes(current)) {
+        item.classList.add("active")
+
+        }
+    })
+}
+
+window.addEventListener("scroll", activeLink)
+
+
+// scroll 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sr = ScrollReveal({
+        origin: "top",
+        distance: "60px",
+        duration: 2500,
+        delay: 300,
+        reset: true
+    });
+
+    sr.reveal(`.home_data, .about_top, .popular_top, .review_top, .review_swiper, .footer_icon, .footer_content, .copy_right`);
+    sr.reveal(`.home_image`, {delay: 500, scale: 0.5});
+
+
+    sr.reveal(`.service_card, .popular_card`, {interval:100});
+    sr.reveal(`.about_leaf`, {delay: 1000, origin: "right"});
+    sr.reveal(`.about_item_1-content, .about_item_2-img `, { origin: "right"});
+    sr.reveal(`.about_item_2-content, .about_item_1-img `, { origin: "left"});
+    sr.reveal(`.review_leaf, .footer_floral`, {delay: 1000, origin: "left"});
+
+    
+
+
+});
