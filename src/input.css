@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container{
+    @apply px-6 py-12 max-w-7xl mt-auto lg:px-8 lg:mt-10;
+}
+
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+.slider {
+    width: 100%; /* Fixed width */
+    height: auto; /* Fixed height */
+    position: relative; /* Required for positioning */
+    margin: 50px auto; /* Center the slider on the page */
+    overflow: hidden; /* Hide overflow to show one slide */
+}
+
+.slides {
+    display: flex;
+    height: 100%; /* Make slides full height */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.slides img {
+    min-width: 100%; /* Each image takes at least full width */
+    height: 100%; /* Full height of the slider */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+}
+
+.buttons {
+    /* position: absolute; Positioning buttons over the slider */
+    top: 50%; /* Center vertically */
+    width: 100%; /* Full width */
+    display: flex; /* Flexbox for button layout */
+    justify-content: center; /* Center buttons */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 123, 255, 0.8); /* Slightly transparent background */
+    color: white;
+    cursor: pointer;
+}
+
+
+.circule-roted{
+    animation-name: rotate;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-radius: 50%;
+}
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
