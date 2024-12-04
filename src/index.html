@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leadias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar  -->
+    <div class="hidden px-5 sm:px-20 flex-col sm:flex-row md:flex ">
+        <div class="flex py-6 gap-4 ">
+            <img src="image/Email (3).png" alt="">
+            <span class="">info@leadiasacademy.com</span>
+        </div>
+        <div class="flex py-1 sm:py-6 gap-4 sm:mx-5">
+            <img src="image/Call.png" alt="">
+            <span class="">+91 85929 46560</span>
+        </div>
+
+
+    </div>
+    <div class=" hidden border-b-2 md:flex">
+        <div class="flex py-6 gap-4 mx-5 sm:mx-20 top-0 right-0 sm:justify-end sm:absolute">
+            <img src="image/Facebook (1).png" alt="">
+            <img src="image/Instagram.png" alt="">
+            <img src="image/Telegram.png" alt="">
+            <img src="image/Whatsapp.png" alt="">
+            <img src="image/Youtube.png" alt="">
+        </div>
+    </div>
+    <nav class="p-6 sm:px-20 flex gap-12 justify-between items-center  right-0 left-0 z-20 ">
+        <a href="#" id="brand">
+            <img src="image/logo 1.png" alt="">
+        </a>
+        <div id="nav-menu" class=" hidden lg:flex gap-6 items-center lg:text-[11px] xl:text-[16px]">
+            <a href="#" class="font-medium hover:text-primary" id="pricing">Home</a>
+            <a href="#" class="font-medium hover:text-primary">About Us</a>
+            <a href="#" class="font-medium hover:text-primary">Courses</a>
+            <a href="#" class="font-medium hover:text-primary">Scholarship</a>
+            <a href="#" class="font-medium hover:text-primary">Announcements</a>
+            <a href="#" class="font-medium hover:text-primary">Blog</a>
+            <a href="#" class="font-medium hover:text-primary">Ventures</a>
+            <button
+                class="flex gap-2 items-center border bg-orange-600 text-white px-6 py-2 rounded-tl-full rounded-br-full hover:bg-white hover:text-black hover:border-orange-600">
+                <img src="" alt="">
+                <span>Connect with Us</span>
+            </button>
+        </div>
+        <button class="p-2 lg:hidden" onclick="handleMenu()">
+            <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
+        <div id="nav-dialog" class="hidden fixed z-10 lg:hidden bg-white inset-0 p-3 ">
+            <div id="nav-bar" class="flex justify-between">
+                <a href="#" id="brand" class="flex gap-2 items-center">
+                    <img class="object-cover max-w-12 max-h-12" src="image/asset 0.png" alt="">
+                    <span class="text-lg font-medium font-display "><img src="image/logo 1.png" alt=""></span>
+                </a>
+                <button class="p-2 lg:hidden" onclick="handleMenu()">
+                    <i class="fa-solid fa-xmark text-gray-600"></i>
+                </button>
+            </div>
+            <div class="mt-6 ">
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50  rounded-lg flex justify-center">Home</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50  rounded-lg flex justify-center">About Us</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50  rounded-lg flex justify-center">Courses</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50  rounded-lg flex justify-center">Scholarship</a>
+                <a href="#"
+                    class="font-medium m-3 p-3 hover:bg-gray-50  rounded-lg flex justify-center">Announcements</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50  rounded-lg flex justify-center">Blog</a>
+                <a href="#" class="font-medium m-3 p-3 hover:bg-gray-50  rounded-lg flex justify-center">Ventures</a>
+
+            </div>
+            <div class="h-[1px] bg-gray-300"></div>
+            <button
+                class=" mt-6  flex gap-2 items-center px-6 py-4 rounded-tl-full rounded-br-full bg-orange-600 hover:border-orange-600 w-fit hover:bg-gray-50">
+                <img src="image/asset 1.svg" alt="">
+                <span>Electron Developers</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- section-1  -->
+    <div class="px-5 sm:px-20 flex flex-col items-center pt-12 text-center sm:leading-[60px] font-bold">
+        <div>
+            <span class="text-2xl text-center md:text-4xl lg:text-5xl xl:text-6xl ">One-stop platform for all <br><span
+                    class="text-color"> IAS</span> Aspirants</span>
+        </div>
+    </div>
+    <!-- slider  -->
+    <div class="slider">
+        <div class="slides">
+            <img src="image/Final Image.png" alt="Image 1">
+            <img src="image/Final Image.png" alt="Image 2">
+            <img src="image/Final Image.png" alt="Image 3">
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="prevBtn" class="bg-orange-600 px-2 py-2 rounded-full gap-4"></button>
+        <button id="nextBtn" class="bg-orange-600 px-2 py-2 rounded-full mx-5"></button>
+    </div>
+
+    <!-- choose section  -->
+    <div class="bg-color mx-5 sm:px-20 my-10 sm:mx-20 md:mx-8 xl:mx-16 rounded-md">
+        <div class="bg-hero-pattern">
+            <div class="flex justify-center">
+                <span class="text-xl text-white items-center py-10 sm:py-20 sm:text-4xl">Are you an IAS Aspirant?</span>
+            </div>
+            <div class="flex justify-center -m-6 sm:-m-14 ">
+                <span class="text-[16px] text-white sm:text-3xl">Choose LeadIAS</span>
+            </div>
+
+
+            <div class=" flex-cols-3 mt-24 gap-12 pb-16 grid grid-cols-1 sm:mt-32 sm:gap-12 sm:grid-cols-1 md:gap-8 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+                <div class="">
+                    <div class="flex justify-center">
+                        <img src="image/Rectangle 8.png" alt="" class="circule-roted">
+                        <img src="image/Rectangle-round.png" alt="" class="absolute ml-7 mt-1 ">
+                        <img src="image/HSR.png" alt="" class="absolute mt-7">
+
+                    </div>
+                    <div class="flex justify-center">
+                        <span class="text-white text-[16px] font-bold py-5 sm:text-[24px] md:text-[18px] lg:text-[24px]">High Success Rate</span>
+                    </div>
+                    <div class="flex justify-center px-5">
+                        <span class="text-center text-white">From our Answer Writing batch of 22 Students, 7 students
+                            got placed into the final rank list
+                            last year. Rather than the number of results, the proportion of successful students
+                            matters.</span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="flex justify-center">
+                        <img src="image/Rectangle 8.png" alt="" class="circule-roted">
+                        <img src="image/Rectangle-round.png" alt="" class="absolute ml-7 mt-1">
+                        <img src="image/HSR.png" alt="" class="absolute mt-7">
+                    </div>
+                    <div class="flex justify-center">
+                        <span class="text-white text-[16px] font-bold py-5 sm:text-[24px] md:text-[18px] lg:text-[24px]">Credible Academic Programs</span>
+                    </div>
+                    <div class="flex justify-center">
+                        <span class="text-center text-white px-5">All our academic programmes – Prelims Killer, Mains Killer,
+                            Interview Bootcamp, and Bounce Back are the best-known programmes among aspirants in
+                            Thiruvananthapuram.</span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="flex justify-center">
+                        <img src="image/Rectangle 8.png" alt="" class="circule-roted">
+                        <img src="image/Rectangle-round.png" alt="" class="absolute ml-7 mt-1">
+                        <img src="image/HSR.png" alt="" class="absolute mt-7">
+                    </div>
+                    <div class="flex justify-center">
+                        <span class="text-white text-[16px] font-bold py-5 sm:text-[24px] md:text-[18px] lg:text-[24px]">Innovative Training Methods</span>
+                    </div>
+                    <div class="flex justify-center">
+                        <span class="text-center text-white px-2">To improve answer writing we have developed Onscreen
+                            Comparative Evaluation of answers, and to improve the question-solving skills we introduced
+                            Logic Training. First such initiative in the country.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-5 my-10 md:mx-8 xl:mx-16  ">
+        <div>
+            <p class="text-2xl sm:text-4xl flex justify-center font-bold">Recent Announcements</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-10">
+            <div class="border p-3 sm:flex rounded-md ">
+                <img src="image/img-1.png" alt="" class="w-96 sm:w-40 rounded-md ">
+                <div class="mt-8 sm:mt-0">
+                    <p class="sm:mx-5 font-bold">LeadIAS Prelims Simulator</p>
+                    <p class="sm:mx-5 pt-3">Join the real time simulator by expert Sarath S, Academic Director. Simulator is based on the open test for students at LeadIAS.</p>
+                    <div class="flex sm:mx-5 gap-4 pt-3">
+                    <img src="image/Group.png" alt="">
+                    <p class="">27 Nov 2022</p>
+                </div>
+                </div>
+            </div>
+            <div class="border p-3 sm:flex rounded-md">
+                <img src="image/6a54ebdd118c4442349b635a546971c4.png" alt="" class="w-96 sm:w-40 rounded-md">
+                <div class="mt-8 sm:mt-0">
+                    <p class="sm:mx-5 font-bold">LeadIAS Prelims Simulator</p>
+                    <p class="sm:mx-5 pt-3">Join the real time simulator by expert Sarath S, Academic Director. Simulator is based on the open test for students at LeadIAS.</p>
+                    <div class="flex sm:mx-5 gap-4 pt-3">
+                    <img src="image/Group.png" alt="">
+                    <p class="">27 Nov 2022</p>
+                </div>
+                </div>
+            </div>
+            <div class="border p-3 sm:flex rounded-md">
+                <img src="image/img-3.png" alt="" class="w-96 sm:w-40 rounded-md">
+                <div class="mt-8 sm:mt-0">
+                    <p class="sm:mx-5 font-bold">LeadIAS Prelims Simulator</p>
+                    <p class="sm:mx-5 pt-3">Join the real time simulator by expert Sarath S, Academic Director. Simulator is based on the open test for students at LeadIAS.</p>
+                    <div class="flex sm:mx-5 gap-4 pt-3">
+                    <img src="image/Group.png" alt="">
+                    <p class="">27 Nov 2022</p>
+                </div>
+                </div>
+            </div>
+            <div class="border p-3 sm:flex rounded-md">
+                <img src="image/img-4.png" alt="" class="w-96 sm:w-40 rounded-md">
+                <div class="mt-8 sm:mt-0">
+                    <p class="sm:mx-5 font-bold">LeadIAS Prelims Simulator</p>
+                    <p class="sm:mx-5 pt-3">Join the real time simulator by expert Sarath S, Academic Director. Simulator is based on the open test for students at LeadIAS.</p>
+                    <div class="flex sm:mx-5 gap-4 pt-3">
+                    <img src="image/Group.png" alt="">
+                    <p class="">27 Nov 2022</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
